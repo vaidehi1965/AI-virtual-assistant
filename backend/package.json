@@ -6,13 +6,13 @@
     "scripts": {
         "dev": "nodemon index.js"
     },
-    "author": "Palak",
+    "author": "Vaidehi",
     "license": "ISC",
     "description": "",
     "dependencies": {
-        "axios": "^1.10.0",
+        "axios": "^1.13.5",
         "bcryptjs": "^3.0.2",
-        "cloudinary": "^2.7.0",
+        "cloudinary": "^2.9.0",
         "cookie-parser": "^1.4.7",
         "cors": "^2.8.5",
         "dotenv": "^17.0.0",

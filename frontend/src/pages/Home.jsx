@@ -46,9 +46,9 @@ function Home() {
 
   const speak=(text)=>{
     const utterence=new SpeechSynthesisUtterance(text)
-    utterence.lang = 'hi-IN';
+    utterence.lang = 'en-IN';
     const voices =window.speechSynthesis.getVoices()
-    const hindiVoice = voices.find(v => v.lang === 'hi-IN');
+    const hindiVoice = voices.find(v => v.lang === 'en-IN');
     if (hindiVoice) {
       utterence.voice = hindiVoice;
     }
@@ -90,6 +90,9 @@ synth.speak(utterence);
     }
      if (type ==="weather-show") {
       window.open(`https://www.google.com/search?q=weather`, '_blank');
+    }
+    if (type ==="gmail-open") {
+      window.open(`https://www.gmail.com/`, '_blank');
     }
 
     if (type === 'youtube-search' || type === 'youtube-play') {
@@ -182,7 +185,7 @@ useEffect(() => {
 
 
     const greeting = new SpeechSynthesisUtterance(`Hello ${userData.name}, what can I help you with?`);
-    greeting.lang = 'hi-IN';
+    greeting.lang = 'en-US';
    
     window.speechSynthesis.speak(greeting);
  
