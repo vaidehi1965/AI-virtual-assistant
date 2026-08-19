@@ -10,8 +10,19 @@ import userRouter from "./routes/user.routes.js";
 
 const app = express();
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://ai-virtual-assistant-frontend-ntf7.onrender.com"
+];
+
 app.use(cors({
-    origin: "https://ai-virtual-assistant-ntf7.onrender.com",
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true
 }));
 
